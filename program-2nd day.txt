@@ -1,0 +1,246 @@
+bitwise operations :
+
+n1,n2=int(input("enter the value:")),int(input("enter the value:"))
+print("and operation result:",n1&n2)
+print("or operation result:",n1|n2)
+print("xor operation result:",n1^n2)                                      
+                                 
+-----------------------------------------
+
+multiple inputs :
+
+n=int(input("size:"))
+a=list(map(int,input("numbers:").split()))[:n]
+print(a)
+
+-----------------------------------------
+
+sep and end :
+
+print("its" , 'a', 'good' , 'day',end='')
+print("all" , 'is' , 'good' , sep='***',end='')
+print("joy")      
+
+-------------------------------------------
+
+printing 10 numbers using multiple inputs :
+
+a= list(map(int,input("numbers:").split()))
+for i in range(0,10):
+    print(++i)
+
+--------------------------------------------
+
+printing triangle :
+
+print("*******")
+print(" ***** ")
+print("  ***  ")
+print("   *   ")
+
+----------------------------------------------
+
+printing heart :
+
+print(" **     ** ")
+print("*   *  *   *  ")
+print(" *    *   *")
+print("  *     * ")
+print("     *     ")   
+
+-----------------------------------------------
+
+printing frog :
+
+print("  @. .@ ")
+print(" ( ---- ) ")
+print("( > __ < )  ")
+print("^^  ~~   ^^")
+
+-----------------------------------------------
+
+temperatures :
+
+t=int(input("enter the temp:"))
+if t>45:
+    print("hottest")
+elif(t>=40 and t<=45):
+    print("hot")
+elif(t>=25 and t<=40):
+    print("moderate")
+elif(t>=10 and t<=25):
+    print("cold")
+else:
+    print("chill")
+    
+---------------------------------------------------
+
+check number is 500 :
+
+
+n=int(input("enter the number"))
+if (n==500):
+    print("equal to 500")
+else:
+    print("not equal")
+
+----------------------------------------------------
+ 
+even or odd :
+
+n=int(input("enter the number"))
+if(n%2==0 and n>0):
+    print("it is even positive")
+elif(n%2!=0 and n>0):
+    print("it is odd positive")
+elif(n%2==0 and n<0):
+    print("it is even negative")
+else:
+    print("it is odd negative")
+
+----------------------------------------------------
+greater of two numbers:
+
+n1,n2=int(input("enter n1:")),int(input("enter n2:"))
+if(n1>n2):
+    print("n1 is bigger")
+else:
+    print("n2 is bigger")
+
+
+
+-----------------------------------------------------
+
+greater of three numbers :
+
+n1,n2,n3=int(input("enter n1:")),int(input("enter n2:")),int(input("enter n3:"))
+if(n1>n2 and n1>n3):
+    print("n1 is greater")
+elif(n2>n1 and n2>n3):
+    print("n2 is greater")
+else:
+    print("n3 is greater")
+    
+
+--------------------------------------------------------
+
+divisible by 11 :
+
+n=int(input("enter the number:"))
+if(n%11==0):
+    print("the number is divisible")
+else:
+    print("it is not divisible")
+
+-------------------------------------------------------
+
+divisible 2 and 5 :
+
+n=int(input("enter the number:"))
+if(n%2==0 and n%5==0):
+    print("the is divisible by both")
+else:
+    print("it is not divisible")
+
+-----------------------------------------------------------
+ check whether the given number is int or float:
+       
+n=10
+if isinstance(n,int):
+    print("it is int num")
+else:
+    print("it is float num")
+
+-----------------------------------------------------------
+
+while loop:
+
+n=1
+while (n<=20):
+    print(n)
+    n=n+1
+
+-----------------------------------------------------------
+
+even numbers using while loop:
+
+n=1
+while(n<=20):
+    if(n%2==0):
+              print(n)
+    n=n+1
+
+-------------------------------------------------------------
+
+odd while loop:
+
+n=1
+while(n<=30):
+    if(n%2!=0):
+              print(n)
+    n=n+1   
+
+-------------------------------------------------------------
+
+for loop:
+
+for i in range(1,15):
+    print(i)
+
+----------------------------------------------------------------
+
+even for:
+
+for i in range(1,20):
+    if(i%2==0):
+        print(i)
+
+------------------------------------------------------------------
+
+odd for:
+
+for i in range(1,30):
+    if(i%2!=0):
+        print(i)
+
+-------------------------------------------------------------------
+
+jump in for loop:
+
+for i in range(2,21,2):
+    print(i)
+
+---------------------------------------------------------------------
+
+playing with numbers:
+
+import random
+n = random.randrange(9,90)
+guess = int(input("Enter the first guess:"))
+while n!= guess:
+    if guess < n:
+        print("Too low!")
+        guess = int(input("Enter the next guess"))
+    elif guess > n:
+         print("Too high!")
+         guess = int(input("Enter the next guess"))
+    else:
+         break
+print("You guessed it right!!")         
+    
+
+-----------------------------------------------------------------------
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
