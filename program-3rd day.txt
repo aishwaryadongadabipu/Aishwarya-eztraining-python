@@ -1,0 +1,101 @@
+list:
+l=[1,2,3,4,5,6,7,8,9,10]
+for i in range(0,10):
+    print(l[i])
+
+#using membership operator
+
+for j in l:
+    print(j)
+
+----------------------------------
+     
+listcomprehensions:
+
+num=[elements for elements in "AISHWARYA"]
+print(num)
+
+l=["hyd","vizag","chennai"]
+city=[]
+for n in l:
+    if "c" in n:
+        city.append(n)
+print(city)        
+
+
+l1=[2**x for x in range(2,5)]
+print(l1)  
+
+l2=[a for a in range(100,650,100)]
+print(l2)
+
+l3=[1,2,3,4,5,6]
+l4=[i for i in l3 if(i>5)]
+print(l4)
+
+----------------------------------------------- 
+
+printing even numbers in the list:
+
+size=int(input("size:"))
+l=[]         
+for i in range(size):
+         ele=int(input("element:"))
+         l.append(ele)
+print(l)
+for j in l:                 
+                 
+    if(j%2==0):
+        print(j)
+
+--------------------------------------------------
+
+printing 750 0r the sum:  
+
+l=list(map(int,input("elements:").split()))
+print(l)
+prod=1
+sum=0
+for i in l:
+    prod=prod*i
+    sum=sum+i       
+if(prod<=750):
+    print("prod",prod)
+else:
+    print("sum",sum)
+--------------------------------------------
+
+adding float number in list:
+ 
+l=[1.2,2.3,3.4,4.5,5.6]
+sum=l[0]+l[1]+l[2]+l[3]+l[4]
+average=sum/2
+print(sum)
+print(average)
+
+-------------------------------------------------
+set:
+
+s1={1,2,3,4}
+s1.add(9)
+s1
+s1.upadate([30,8])
+s1
+s1.discard(6)
+s1
+s.remove(5)
+s1
+
+-----------------------------------------------------
+
+functions:
+
+s1={1,2,3,4}
+s2={5,6,1,2}
+print(s1|s2)
+print(s1&s2)
+print(s1-s2)
+print(s2-s1)
+
+
+------------------------------------------------------
