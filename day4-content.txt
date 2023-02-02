@@ -1,0 +1,44 @@
+String : 
+
+n= "hi i'am "aish""
+SyntaxError: invalid syntax
+n= "hi i'am"
+n
+"hi i'am"
+n='hi i\'am'
+n
+"hi i'am"
+
+MUTABLE AND IMMUTABLE:
+
+mutable can be changed after creation(address).
+immutable cant be cahnged after creation(address). 
+
+IMMUNTABLE:                    MUTABLE:
+INT                            LIST
+FLOAT                          SET
+STRING                         DICTIONARY
+BOOL
+TUPLE
+
+
+x=50                             
+x
+50
+id(x)
+140726045174088
+x=x*x
+x
+2500
+id(x)
+2468227054992
+
+
+l=[1,2,3]
+id(l)
+2037831491008
+l.remove(3)
+l
+[1, 2]
+id(l)
+2037831491008
