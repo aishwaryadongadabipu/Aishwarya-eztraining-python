@@ -1,0 +1,134 @@
+a=100
+b=0
+try:#u r teeling this may have error,check
+    print(a/b)
+#except Exception:#u are saying if errer is there 
+except Exception as e:
+    print("please note,num cant divide with zero",e)
+
+#to check if execution is done till end or not
+print("bye")    
+
+o/p:
+please note,num cant divide with zero,division by zero
+bye
+ 
+--------------------------------------------------------------
+#using finally:
+
+ a=10
+b=0
+try:
+    print("resource open")
+    print(a/b)
+except Exception as e:
+    print("second num cant be zero",e)
+finally:
+    print("resource closed")
+
+    
+o/p:
+resource open
+second num cant be zero division by zero
+resource closed
+
+---------------------------------------------------------------
+specific errors:
+
+#like specialised doctors
+#for those specific error only those exception blocks will get executed
+a=10
+try:
+    b=int(input("enter the number:"))
+    print("resource opened")
+    print(a/b)
+except ZeroDivisionError as e:
+    print("cant be divided by zero",e)
+except ValueError as e:
+    print("invalid input",e)
+except Exception as e:
+    print("other error",e)
+finally:
+    print("resource closed")
+   
+
+o/p:
+enter the number:0
+resource opened
+cant be divided by zero division by zero
+resource closed
+
+------------------------------------------------------------------------
+
+#raise error
+x=100
+if x%2!=0:
+    raise Exception("x should be even number")
+else:
+    print("x is even number ,correct")
+
+o/p: 
+is even number ,correct
+
+-------------------------------------------------------------------------
+
+class computer: #class defintion
+    def config(self):#config is a function
+        print("yes")
+lenovo=computer()  #object1
+lenovo.config()
+
+dell=computer()    #object2
+dell.config()
+
+o/p:
+yes
+yes
+
+--------------------------------------------------------------------------------
+class emp:
+    def __init__(self,name,id):
+        self.id=id
+        self.name=name
+    def display(self):
+        print(self.id,self.name)
+emp1=emp("Aishwarya",405)
+emp2=emp("bhavani",406)
+
+emp1.display()
+emp2.display()              
+
+       
+o/p:
+405 Aishwarya
+406 bhavani
+
+--------------------------------------------------------------------------------
+
+#variables and var.access in class and method
+class computer():
+    a=10
+    b=20
+    print("class variable inside class:",b)
+    def config(self):
+        c=100
+        print("yes")
+        print("Instance access",self.a)
+lenovo=computer()
+print(lenovo.a)
+print(lenovo.a+lenovo.b)
+dell=computer()
+print("dell",dell.a)
+lenovo.config()
+
+o/p:
+class variable inside class: 20
+10
+30
+dell 10
+yes
+Instance access 10
+
+---------------------------------------------------------------------------------------
+
+
