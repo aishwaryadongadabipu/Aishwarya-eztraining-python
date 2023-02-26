@@ -1,0 +1,55 @@
+Polymorphism:
+one item or same item used for different purpose.
+
+TYPES:
+1.Overloading
+a.Operator overloading
+b.Method overloading
+2.Overriding
+
+Operator overloading:The "+" operator used for integer addition as well as string concationation.
+Method overloading:add() method is used to take 1 more agruments in the same program.
+
+Overriding:if a method is defective or cannot be used inside derived class it take froms its parent class.
+
+
+
+                                                           DATA STRUCTURES IN PYTHON
+
+->Helps to write efficient programs.
+->linear-array,linked list,stack,queue,matrix.
+->non linear-binary tree,heap,hash table,graph.
+->Linear is used to store data sequentially.
+->Non Linear is used to store non sequential data.
+
+STATIC->ARRAY(size is fixed).
+DYNAMIC->LIST,STACK,QUEUE(size is mutable).
+
+LINKED LIST:real time example train.
+
+As the name says list of items which are linked with one another is called as linked list.
+
+TYPES:
+1.SINGLY LL
+2.DOUBLY LL
+3.CIRCULAR LL
+
+CREATING LINKED LIST:
+
+STEP1:create the node.
+STEP2:partision the node with 2 segments data and none.
+STEP3:add value into the blank node.
+STEP4:mark the node as head.
+STEP5:create the next node by following the above steps.
+STEP6:establish link between the first and the second node.
+
+DISPLAY LINKED LIST:
+
+Traversal is required from first node till tail node in order to display existing linked list.
+
+ 
+
+
+
+
+
