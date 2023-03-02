@@ -1,0 +1,64 @@
+BINARY TREE:A node can have maximum of two children.
+
+BINARY TREE TRAVERSAL TYPES:
+
+1.inorder->left-root-right(l-d-r)
+2.preorder->root-left-right(d-l-r)
+3.postorder->left-right-root(l-r-d)data=root
+
+TYPES OF BINARY TREE:
+1.Full binary tree-all nodes will have 2 0r 0 children
+2.Degenerate tree:every node will have 0 or 1 child
+3.Skewed binary tree
+    a                               a
+   /                                 \
+  b                                   b
+ /                                     \
+c                                       c
+
+left skew binary tree                  right skew binary tree
+
+COMPELE BINARY TREE:
+
+1.every level should be full
+2.in last level if it is incompelete notes should present at extreme left side.
+
+                              12
+                              / \   
+                             8  18
+                            / \
+                           5   7
+                 
+PREFECT BINARY TREE:
+-all internal nodes those who have 2 children  and a leaf node should be at same level.
+
+                                  18
+                                 /  \
+                                15  30
+                               / \  / \
+                              40 50 9 89
+BALANCED BINARY TREE:
+ - for all nodes height of left subtree-height of right subtree can be 0 or 1 then it is called as balanced tree.
+
+                                 0(d=0)                                   0(d=2)
+                                / \                                      / \
+                          (d=0)1   2(d=0)                          (d=1)1  2(d=0)
+                              / \                                      / \
+                        (d=0)3   4(d=0)                          (d=1)3  4(d=0)
+                                                                     /
+                                                                    5(d=0)
+                                                                        
+
+                          BALANCED                                       UNBALANCED
+
+
+BINARY SEARCH TREE:all the left side elements should be lesser than it's parent.
+all the right side elements should be greater then it's parent.
+
+                                                7
+                                               / \
+                                              3  10
+                                             / \   \
+                                            2   5   12
+
+
