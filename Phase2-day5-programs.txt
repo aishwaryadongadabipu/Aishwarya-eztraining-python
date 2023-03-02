@@ -1,0 +1,92 @@
+BINARY TREE:
+
+class binarytreenode:
+    def __init__(self,data):
+        self.data=data
+        self.leftchild=None
+        self.rightchild=None
+node1=binarytreenode(50)
+node2=binarytreenode(60)
+node3=binarytreenode(70)
+node4=binarytreenode(80)
+node4=binarytreenode(90)
+node5=binarytreenode(10)
+node6=binarytreenode(20)
+node7=binarytreenode(30)
+
+node1.leftchild=node2
+node1.rightchild=node3
+node2.leftchild=node4
+node2.rightchild=node5
+node3.leftchild=node6
+node3.rightchild=node7
+print("Root Node is:")
+print(node1.data)
+print("left child of the node is:")
+print(node1.leftchild.data)
+print("right child of the node is:")
+print(node1.rightchild.data)
+print("Node is:")
+print(node2.data)
+print("left child of the node is:")
+print(node2.leftchild.data)
+print("right child of the node is :")
+print(node2.rightchild.data)
+
+print("Node is:")
+print(node3.data)
+print("left child of the node is:")
+print(node3.leftchild.data)
+print("right child of the node is :")
+print(node3.rightchild.data)
+
+inorder,preorder and postorder:
+
+class node:
+    def __init__(self,key):
+        self.left=None
+        self.right=None
+        self.val=key
+def printinorder(root):
+    if root:
+        #first recursive on left child
+        printinorder(root.left)
+        #then print the data of nodr
+        print(root.val,end=" ")
+        #now recursive on right child
+        printinorder(root.right)
+def printpostorder(root):
+    if root:
+        #first recursive on left child
+        printpostorder(root.left)
+        #the recursive on right child
+        printpostorder(root.right)
+        #now print the data of node
+        print(root.val,end=" ")
+def printprepost(root):
+    if root:
+        #first print the data of node
+        print(root.val,end=" ")
+        #then recursive on left child
+        printpreorder(root.left)
+        #finally recursive on right child
+        printpreorder(root.right)
+root=node(1)
+root.left=node(2)
+root.right=node(3)
+root.left.left=node(4)
+root.left.right=node(5)
+print("PRE-POST:")
+printpreorder(root)
+print()
+print("\nIN-ORDER:")
+printinorder(root)
+print()
+print("\nPOST-ORDER:")
+printpostorder(root)
+print()
+
+
+
+
+
