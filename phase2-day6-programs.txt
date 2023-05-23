@@ -1,0 +1,265 @@
+#BST-DELETE
+class Node:
+    def _init_(self,key):
+        self.key=key
+        self.left=None
+        self.right=None
+
+
+def inorder(root):
+    if root is not None:
+        inorder(root.left)
+        print(root.key)
+        inorder(root.right)
+
+#a new node with given key
+def insert(node,key):
+    #if tree is empty,return new node
+    if node is None:
+        return node(key)
+    #otherwise recur down the tree
+    if key<node.key:
+        node.left=insert(node.left,key)
+    else:
+        node.right=insert(node.right,key)
+    return node
+def minvaluenode(node):
+    current=node
+    #loop down to find the leftmost leaf
+    while(current.left is not None):
+        current=current.left
+    return current
+
+def deletenode(root,key):
+    if root is None:
+        return root
+    if key<root.key:
+        root.left=deletenode(root.left,key)
+    elif (key>root.key):
+        root.right=deldetenode(root.right.key)
+    else:
+        if root.left is None:
+            temp=root.right
+            root=None
+            return temp
+        elif root.right is None:
+            temp=root.left
+            root=None
+            return temp
+        temp=minvaluenode(root.right)
+        root.key=temp.key
+        root.right=deletenode(root.right,temp.key)
+    return root
+"""               50
+                 /  \
+               30   70  
+              /  \ /  \
+            20  40 60 80"""
+
+root=None
+root=insert(root, 50)
+root=insert(root, 30)
+root=insert(root, 20)
+root=insert(root, 40)
+root=insert(root, 70)
+root=insert(root, 60)
+root=insert(root, 80)
+print("inorder traversal of given tree")
+inorder(root)
+print("\ndelete 20")
+root=deletenode(root,20)
+print("inorder traversal of given tree")
+inorder(root)
+print("\ndelete 30")
+root=deletenode(root,30)
+print("inorder traversal of given tree")
+inorder(root)
+print("\ndelete 50")
+root=deletenode(root,50)
+print("inorder traversal of modified tree")
+inorder(root)
+
+
+
+class Graph(object):
+    
+    #initialize the matrix
+    def __init__(self,size):
+        self.adjmatrix=[]
+        for i in range(size):
+            self.adjmatrix.append([0 for i in range(size)])
+        self.size=size
+        
+    #add edges
+    def add_edge(self,v1,v2):
+        if v1==v2:
+           print("same vertex %d and %d"%(v1,v2))
+        self.adjmatrix[v1][v2]=1
+        self.adjmatrix[v2][v1]=1
+        
+    #not necessary to have remove edge and len function
+    """def remove_edge(self,v1,v2):
+        if self.adjmatrix[v1][v2]==0:
+            print("no edge between %d and %d"%(v1,v2))
+            return
+        self.adjmatrix[v1][v2]=0
+        self.adjmatrix[v2][v1]=0"""
+    """ def __len__(self):
+        return self.size"""
+
+    
+    #print the matrix
+    def print_matrix(self):
+        for row in self.adjmatrix:
+            for val in row:
+                print('{:4}'.format(val)),
+            
+def main():  
+   g=Graph(5)
+   g.add_edge(0,1)
+   g.add_edge(0,2)
+   g.add_edge(1,2)
+   g.add_edge(2,0)
+   g.add_edge(2,3)
+   g.print_matrix()
+   
+if __name__=='__main__':  #program execution starts here
+    main()
+
+"""Dijkstra's algorithm is an iterative algorithm that provides us with the shortest path from one particular starting node
+(a in our cases)to all other nodes in the graph"""
+#python program for dijkstra's single
+#source shortest path algorithm.The program is for adjacency matrix representation of the graph
+#library for INT_MAX
+import sys
+class Graph():
+    def __init__(self,vertices):
+        self.v=vertices
+        self.Graph=[[0 for column in range(vertices)] for row in range(vertices)]
+    def printsolution(self,dist):
+        print("vertex distance from source")
+        for node in range(self.v):
+            print(node,"t",dist[node])
+#a utility function to find the vertex with minimum distance value,from the set of vertex not yet
+#included in shortestpath tree
+    def  mindistance(self,dist,sptset):
+        #initialize minimum distance for next node
+        min=sys.maxsize
+        #search not nearest vertex not in the shortest path tree
+        for v in range(self.v):
+            if dist[v]<min and sptset[v]==False:
+                min=dist[v]
+                min_index=v
+        return min_index
+#function that implements dijkstra's single shortest path algorithm for a graph represntation using
+#adjacency matrix representation
+    def dijkstra(self,src):
+         dist=[sys.maxsize]*self.v
+         dist[src]=0
+         sptset=[False]*self.v
+         for cout in range(self.v):
+             u=self.mindistance(dist,sptset)
+             sptset[u]=True
+             for v in range(self.v):
+                 if(self.Graph[u][v]>0) and (sptset[v]==False) and (dist[v]>dist[u] +self.Graph[u][v]):
+                     dist[v]=(dist[u]+self.Graph[u][v])
+         self.printsolution(dist)
+g=Graph(9)
+g.Graph=[ [0,4,0,0,0,0,0,8,0],
+               [4,0,8,0,0,0,0,11,0],
+               [0,8,0,7,0,4,0,0,2],
+               [0,0,7,0,9,14,0,0,0],
+               [0,0,0,9,0,10,0,0,0],
+               [0,0,4,14,10,0,2,0,0],
+               [0,0,0,0,0,2,0,1,6],
+               [8,11,0,0,0,0,1,0,7],
+               [0,0,2,0,0,0,6,7,0]]
+g.dijkstra(0)
+          
+graph={               #taken values in the form of dictionary as it has unique keys which satisfies our bfs condition
+ '5':['3','7'],       #that is avoid duplicates in a graph
+ '3':['2','4'],
+ '7':['8'],
+ '2':[],
+ '4':['8'],
+ '8':[]
+ }
+#bfs-we use queue
+visited=[] #list for visited nodes
+queue=[]  #initialize a queue we use becoz FIFO
+
+def bfs(visited,graph,node):
+    visited.append(node) #the visited node should be appended
+    queue.append(node)  #and that node should be added in the queue
+
+    while queue: #creating loop to visit
+        m=queue.pop(0)  #and that visited should be popped
+        print(m,end=" ")
+
+        for neighbour in graph[m]:
+            if neighbour not in visited:
+                visited.append(neighbour)  #now add the non-visited nodes
+                queue.append(neighbour)
+bfs(visited,graph,'5')  #function call
+                        #the order should be followed suppose if we place 8 there then no other nodes are get visited
+                        #as 
+
+graph={
+ '5':['3','7'],       
+ '3':['2','4'],
+ '7':['8'],
+ '2':[],
+ '4':['8'],
+ '8':[]
+ }
+
+visited=set()  #set to keep track of visited nodes
+
+def dfs(visited,graph,node):
+    if node not in visited:
+        print(node,end=" ")
+        visited.add(node)
+        for neighbour in graph[node]:
+            dfs(visited,graph,neighbour)
+dfs(visited,graph,'5')
+
+
+
+#import dictionary for graph
+from collections import defaultdict
+
+#add edge to graph:function
+graph=defaultdict(list)
+def addedge(graph,u,v):
+    graph[u].append(v)
+    
+#function description
+def generate_edges(graph):
+    edges=[]
+    
+#for each node in graph
+    for node in graph:
+        #for each neighbour node of a single node
+        for neighbour in graph[node]:
+            #if edge exists then append
+            edges.append((node,neighbour))
+    return edges
+
+#declaring-graph as dictionary
+addedge(graph,'a','c')
+addedge(graph,'b','c')
+addedge(graph,'b','e')
+addedge(graph,'c','d')
+addedge(graph,'c','e')
+addedge(graph,'c','a')
+addedge(graph,'c','b')
+addedge(graph,'e','b')
+addedge(graph,'d','c')
+addedge(graph,'e','c')
+#printing graph
+print(generate_edges(graph))
+            
+
+    
+                    
+
