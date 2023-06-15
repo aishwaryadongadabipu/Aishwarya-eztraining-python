@@ -46,7 +46,7 @@ for i in questions:
         print("Your current score is :",score)
     else:
         print("Wrong answer,u lost 1 mark")
-        print("Correct answer:"questions[i])
+        print("Correct answer:",questions[i])
         score=score-1
         print("Your current score is:",score)
     flag2=input("Do you want to quit? type(yes/no)")
